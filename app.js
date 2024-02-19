@@ -18,6 +18,8 @@ let num_1 = 10;
 let num_2 = 2;
 alert([num_1+num_2, num_1-num_2, num_1 * num_2, num_1/num_2]);
 
+
+
 // задание 5
 let result = 2;
 result **=5;
