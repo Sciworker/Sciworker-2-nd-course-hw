@@ -13,7 +13,6 @@ const namejscreator = "Brendan Eich"
 alert(namejscreator);
 
 // задание 4
-
 let num_1 = 10;
 let num_2 = 2;
 alert([num_1+num_2, num_1-num_2, num_1 * num_2, num_1/num_2]);
@@ -28,15 +27,14 @@ let res_1 = 9;
 let res_2 = 2;
 alert(`Остаток от деления: ${res_1 % res_2}`);
 
-
 // задание 7
 let num = 1;
-num = num + 5;
-num = num - 3;
-num = num * 7;
-num = num / 3;
-num = num++;
-num = num--;
+num += 5;
+num -= 3;
+num *= 7;
+num /= 3;
+num++;
+num--;
 console.log(num);
 
 // задание 8
@@ -68,6 +66,6 @@ let info = prompt("Какую информацию хотите узнать о 
 alert(user[info])
 
 // задание 10
-
 let name10 = prompt("Как Ваше имя?")
 alert("Привет, "  + name10 +"!")
+
