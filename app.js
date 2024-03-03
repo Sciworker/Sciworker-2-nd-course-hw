@@ -1,71 +1,47 @@
-// задание 1
-let a = 10;
-alert(a);
-a = 20
-alert(a);
+//задание 2.4.(1)
+  let word = "Привет"
+console.log(word) 
+console.log(word) 
+//  
+// задание 2.4 (2)
+for(let num=1;num<=5;num++){
+   console.log(num) 
+ }
 
-// задание 2
-const yearfirstiphone = 2007;
-alert(yearfirstiphone);
+//  задание 2.4 (3)
+for(let num=7;num<=22;num++){
+   console.log(num) 
+ }
 
-// задание 3
-const namejscreator = "Brendan Eich"
-alert(namejscreator);
+//Задание 2.4 (4)
 
-// задание 4
-let num_1 = 10;
-let num_2 = 2;
-alert([num_1+num_2, num_1-num_2, num_1 * num_2, num_1/num_2]);
-
-// задание 5
-let result = 2;
-result **=5;
-alert(result);
-
-// задание 6
-let res_1 = 9;
-let res_2 = 2;
-alert(`Остаток от деления: ${res_1 % res_2}`);
-
-// задание 7
-let num = 1;
-num += 5;
-num -= 3;
-num *= 7;
-num /= 3;
-num++;
-num--;
-console.log(num);
-
-// задание 8
-let age = prompt( "Сколько Вам лет")
-alert("Вам "+ age + " лет")
-
-// задание 9
-let user = {
-    name: "Иван",
-    age:  20,
-    isAdmin: true
+let obj = {
+    "Коля": '200',
+    "Вася": '300',
+    "Петя": '400',
 }
-console.log(user.age)
 
-// задание 9.1
-user["city of residence"]="Minsk"
-console.log(user["city of residence"])
+for (let employee in obj) {
+    console.log(`${employee} — зарплата ${obj[employee]} долларов`);
+}
 
-// задание 9.2
-user[age]=30
-console.log(user[age])
+// Задание 2.4(5)
 
-// задание 9.3
-delete user["city of residence"]
-console.log(user["city of residence"])
+let n = 1000;
+let num = 0;
 
-// задание 9.4
-let info = prompt("Какую информацию хотите узнать о пользователе?")
-alert(user[info])
+while (n >= 50) {
+    num++;
+    n /= 2;
+}
 
-// задание 10
-let name10 = prompt("Как Ваше имя?")
-alert("Привет, "  + name10 +"!")
+console.log(n, num);
 
+
+// Задание 2.4 (6)
+
+let firstFriday = 3;
+
+for (let currentFriday = firstFriday; currentFriday <= 31; currentFriday+=7) {
+    console.log(`Сегодня пятница, ${currentFriday}-е число. Необходимо подготовить отчёт.`);
+}
