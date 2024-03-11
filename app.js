@@ -1,47 +1,50 @@
-//задание 2.4.(1)
-  let word = "Привет"
-console.log(word) 
-console.log(word) 
-//  
-// задание 2.4 (2)
-for(let num=1;num<=5;num++){
-   console.log(num) 
- }
 
-//  задание 2.4 (3)
-for(let num=7;num<=22;num++){
-   console.log(num) 
- }
-
-//Задание 2.4 (4)
-
-let obj = {
-    "Коля": '200',
-    "Вася": '300',
-    "Петя": '400',
+// задание 1(2.3)
+let password = "123456";
+let user_password = prompt(" Введите пароль ");
+if(password === user_password) {
+alert("Пароль введен верно" )
+} else{
+  alert("Пароль введен неверно" )
 }
 
-for (let employee in obj) {
-    console.log(`${employee} — зарплата ${obj[employee]} долларов`);
-}
+// задание 2(2.3)
+let c = 6
+с > 0 && c < 10 ? console.log('Верно') : console.log(' Неверно');
 
-// Задание 2.4(5)
+// задание 3(2.3)
+let d = 10
+let e = 90
+d > 100 || e > 100 ? console.log('Верно') : console.log('Неверно');
 
-let n = 1000;
-let num = 0;
+// задание 4(2.3)
+let a = '2';
+let b = '3';
+alert(parseInt(a) + parseInt(b));
 
-while (n >= 50) {
-    num++;
-    n /= 2;
-}
-
-console.log(n, num);
-
-
-// Задание 2.4 (6)
-
-let firstFriday = 3;
-
-for (let currentFriday = firstFriday; currentFriday <= 31; currentFriday+=7) {
-    console.log(`Сегодня пятница, ${currentFriday}-е число. Необходимо подготовить отчёт.`);
+//задание 5(2.3)
+let monthNumber = 12;
+switch(monthNumber){
+case 1:
+case 2:
+case 12:
+alert('Winter');
+break;
+case 3:
+case 4:
+case 5:
+alert('Spring');
+break;
+case 6:
+case 7:
+case 8:
+alert('Summer');
+break;
+case 9:
+case 10:
+case 11:
+alert('Autumn');
+break;
+default:
+alert("Введите число месяца")
 }
