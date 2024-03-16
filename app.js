@@ -1,47 +1,69 @@
-//задание 2.4.(1)
-  let word = "Привет"
-console.log(word) 
-console.log(word) 
-//  
-// задание 2.4 (2)
-for(let num=1;num<=5;num++){
-   console.log(num) 
- }
 
-//  задание 2.4 (3)
-for(let num=7;num<=22;num++){
-   console.log(num) 
- }
+//   задание 2.8(1)
+ const people1 = [
+   { name: 'Глеб', age: 29 },
+   { name: 'Анна', age: 17 },
+   { name: 'Олег', age: 7 },
+   { name: 'Оксана', age: 47 }
+];
+people1.sort((a,b) =>  a.age - b.age)
 
-//Задание 2.4 (4)
+console.log(people1)
 
-let obj = {
-    "Коля": '200',
-    "Вася": '300',
-    "Петя": '400',
+// задание2.8(2)
+function isPositive(num) {
+    return num >= 0;
+}
+function isMale(obj) {
+    return obj.gender === "male";
+}
+function filter(arr, ruleFunc) {
+    let filteredArr = [];
+
+    arr.map(elem => ruleFunc(elem) ? filteredArr.push(elem) : elem);
+
+    return filteredArr;
+}
+console.log( filter([3, -4, 1, 9], isPositive) );
+const people = [
+    {name: 'Глеб', gender: 'male'},
+    {name: 'Анна', gender: 'female'},
+    {name: 'Олег', gender: 'male'},
+    {name: 'Оксана', gender: 'female'},
+]
+console.log(filter(people, isMale));
+
+
+//  задание 2.8(3)
+const inter = setInterval(() => {
+    let today = new Date;
+    document.write(today +'<br>')
+}, 3000);
+
+setTimeout(() => {
+    clearInterval(inter)
+    document.write('30 секунд прошло')
+}, 30000);
+
+//  задание 2.8(4)
+function delayForSecond(callback) {
+    setTimeout(callback, 1000);
 }
 
-for (let employee in obj) {
-    console.log(`${employee} — зарплата ${obj[employee]} долларов`);
+delayForSecond(function() {
+    console.log("Привет, Глеб!");
+})
+
+// задание 2.8(5)
+function delayForSecond(cb) {
+    setTimeout(() => {
+        console.log('Прошла одна секунда');
+        if (cb) { cb(); };
+    }, 1000);
 }
-
-// Задание 2.4(5)
-
-let n = 1000;
-let num = 0;
-
-while (n >= 50) {
-    num++;
-    n /= 2;
+function sayHi(name) {
+    console.log(`Привет, ${name}!`);
 }
-
-console.log(n, num);
-
-
-// Задание 2.4 (6)
-
-let firstFriday = 3;
-
-for (let currentFriday = firstFriday; currentFriday <= 31; currentFriday+=7) {
-    console.log(`Сегодня пятница, ${currentFriday}-е число. Необходимо подготовить отчёт.`);
-}
+delayForSecond(function() {
+    sayHi('Глеб');
+});
