@@ -1,0 +1,319 @@
+@charset "UTF-8";
+
+/* подключение шрифтов */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*Обнуление
+Браузер применяет стандартные стили которые не совпадают со стилями макета
+Поэтому используем обнуляющие стили
+*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+/*--------------------*/
+
+
+/* Общие стили сайта */
+body {
+  /* шрифт */
+  font-family: "Montserrat";
+  /* цвет */
+  color: #FFFFFF;
+}
+
+/* Оболочка сайта внутри которой уже все размещается
+Нужна чтобы если какой-нибудь элемент вылезает за границу экрана не появлялась полоса прокрутки */
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  /* свойство отвечающее за скрытие вылезаещего за края контента */
+  overflow: hidden;
+  /* основной фон сайта */
+  background-color: #000915;
+}
+
+/* стили для всех классов которые оканчиваются на "__container" 
+контейнер нужен чтобы ограничить ширину контента по макету и выровнять по центру
+*/
+[class*=__container] {
+  /* ограничение по ширине */
+  max-width: 1230px;
+  /* отступы по бокам чтобы контент не прилипам к краям экрана */
+  padding: 0px 16px;
+  /* выравнивание по центру */
+  margin: 0px auto;
+}
+
+/* общие стили для классов которые используются в нескольких местах на сайте*/
+/* например: стили для загловка игры т.е. для каждого заголовка игры мы в html добавляем класс game-title который добавляет общие стили */
+.game-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58.5px;
+}
+/* медиа запросы для заголовка игры */ 
+/* нужны чтобы по мере уменьшения ширины экрана заголовки также уменьшались
+таким образом сайт будет смотрется хорошо на любом устройстве */
+@media (max-width: 768px) {
+  .game-title {
+    font-size: 40px;
+    line-height: 49px;
+  }
+}
+@media (max-width: 576px) {
+  .game-title {
+    font-size: 32px;
+    line-height: 39px;
+  }
+}
+/* общие стили для текста на сайте */
+.text {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 32px;
+}
+/* слова выделенные жирным шрифтом в тексте */
+.text span {
+  font-weight: 700;
+}
+@media (max-width: 576px) {
+  .text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+/* общие стили для кнопкок на сайте */
+.button {
+  color: #FFFFFF;
+  background-color: #9C0332;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  padding: 13px 23px;
+  border-radius: 30px;
+  min-width: 234px;
+}
+/* для эффекта наведения на кнопку (меняет цвет) */
+.button:hover {
+  background-color: #EB443F;
+}
+
+/* первая секция*/
+.welcome {
+  padding: 217px 0px 0px 0px;
+  height: 1024px;
+  /* фоновое изображение */
+  background: url("../img/welcome/background.jpg") 50%/cover no-repeat;
+}
+@media (max-width: 1200px) {
+  .welcome {
+    text-align: center;
+  }
+  .welcome__container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 992px) {
+  .welcome {
+    height: 892px;
+    padding: 175px 0px 0px 0px;
+  }
+}
+@media (max-width: 576px) {
+  .welcome {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 735px;
+  }
+}
+/* заголовок первой секции */
+.welcome__title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 78px;
+  letter-spacing: 0px;
+  margin: 0px 0px 32px 0px;
+  max-width: 790px;
+}
+@media (max-width: 768px) {
+  .welcome__title {
+    font-size: 50px;
+    line-height: 58px;
+  }
+}
+@media (max-width: 576px) {
+  .welcome__title {
+    font-size: 32px;
+    line-height: 39px;
+  }
+}
+/* текст первой секции */
+.welcome__text {
+  margin: 0px 0px 44px 0px;
+  max-width: 480px;
+}
+@media (max-width: 576px) {
+  .welcome__text {
+    margin: 0px 0px 32px 0px;
+  }
+}
+/* вторая секция */
+.games {
+  padding: 128px 0px;
+}
+.games__container {
+  display: flex;
+  gap: 26px;
+}
+@media (max-width: 992px) {
+  .games__container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.game {
+  position: relative;
+  overflow: hidden;
+  border: 3px solid transparent;
+  border-radius: 16px;
+}
+/* эффект наведения на карточку с игрой (меняем курсор на указывающий и создаем голубую рамку) */
+.game:hover {
+  cursor: pointer;
+  border: 3px solid #44D2FF;
+}
+/* картинка игры */
+.game__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  height: 300px;
+}
+/* заголовок игры */
+.game__title {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+}
+
+/* третья секция */
+.seasons-game {
+  padding: 234px 0px;
+}
+@media (max-width: 992px) {
+  .seasons-game {
+    padding: 120px 0px 150px 0px;
+  }
+}
+@media (max-width: 576px) {
+  .seasons-game {
+    padding: 51px 0px 85px 0px;
+  }
+}
+.seasons-game__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+}
+@media (max-width: 992px) {
+  .seasons-game__container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* блок с заголовком текстом и кнопкой */
+.seasons-game__body {
+  flex: 0 1 584px;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media (max-width: 992px) {
+  .seasons-game__body {
+    align-items: center;
+    text-align: center;
+  }
+}
+/* изображение игры */
+.seasons-game__image img {
+  max-width: 100%;
+}/*# sourceMappingURL=style.css.map */
